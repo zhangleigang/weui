@@ -1,0 +1,28 @@
+@import "../../base/fn";
+
+.weui-cell_swiped{
+    padding: 0;
+    display: block;
+}
+.weui-swiped-cell__ctn{
+    position: relative;
+    padding: @weuiCellGapV @weuiCellGapH;
+    display: flex;
+    z-index: 1;
+    background-color: @weuiCellBg;
+}
+.weui-swiped-cell__opr{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+    display: flex;
+}
+.weui-swiped-cell__btn{
+    padding: 0 .7em;
+    height: @weuiCellHeight;
+    line-height: @weuiCellHeight;
+    background-color: @weuiColorWarn;
+    color: #FFFFFF;
+}

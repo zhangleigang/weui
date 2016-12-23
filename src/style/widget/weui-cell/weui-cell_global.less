@@ -12,9 +12,11 @@
     position: relative;
     &:before {
         .setTopLine(@weuiCellBorderColor);
+        z-index: 10;
     }
     &:after {
         .setBottomLine(@weuiCellBorderColor);
+        z-index: 10;
     }
 }
 
@@ -47,6 +49,7 @@
     &:before {
         .setTopLine(@weuiCellBorderColor);
         left: @weuiCellGapH;
+        z-index: 10;
     }
     &:first-child {
         &:before {
