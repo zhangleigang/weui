@@ -60,14 +60,14 @@ gulp.task('build:style', function (){
         .pipe(gulp.dest(dist));
 });
 
-gulp.task('build:example:assets', function (){
-    gulp.src('src/example/**/*.?(png|jpg|gif|js)', option)
+gulp.task('build:docpage:assets', function (){
+    gulp.src('src/docpage/**/*.?(png|jpg|gif|js)', option)
         .pipe(gulp.dest(dist))
         .pipe(browserSync.reload({stream: true}));
 });
 
-gulp.task('build:example:style', function (){
-    gulp.src('src/example/example.less', option)
+gulp.task('build:docpage:style', function (){
+    gulp.src('src/docpage/docpage.less', option)
         .pipe(less().on('error', function (e){
             console.error(e.message);
             this.emit('end');
@@ -81,8 +81,8 @@ gulp.task('build:example:style', function (){
         .pipe(browserSync.reload({stream: true}));
 });
 
-gulp.task('build:example:html', function (){
-    gulp.src('src/example/index.html', option)
+gulp.task('build:docpage:html', function (){
+    gulp.src('src/docpage/index.html', option)
         .pipe(tap(function (file){
             var dir = path.dirname(file.path);
             var contents = file.contents.toString();
@@ -98,15 +98,15 @@ gulp.task('build:example:html', function (){
         .pipe(browserSync.reload({stream: true}));
 });
 
-gulp.task('build:example', ['build:example:assets', 'build:example:style', 'build:example:html']);
+gulp.task('build:docpage', ['build:docpage:assets', 'build:docpage:style', 'build:docpage:html']);
 
-gulp.task('release', ['build:style', 'build:example']);
+gulp.task('release', ['build:style', 'build:docpage']);
 
 gulp.task('watch', ['release'], function () {
     gulp.watch('src/style/**/*', ['build:style']);
-    gulp.watch('src/example/example.less', ['build:example:style']);
-    gulp.watch('src/example/**/*.?(png|jpg|gif|js)', ['build:example:assets']);
-    gulp.watch('src/**/*.html', ['build:example:html']);
+    gulp.watch('src/docpage/docpage.less', ['build:docpage:style']);
+    gulp.watch('src/docpage/**/*.?(png|jpg|gif|js)', ['build:docpage:assets']);
+    gulp.watch('src/**/*.html', ['build:docpage:html']);
 });
 
 gulp.task('server', function () {
@@ -122,7 +122,7 @@ gulp.task('server', function () {
             }
         },
         port: yargs.p,
-        startPath: '/example'
+        startPath: '/docpage'
     });
 });
 
