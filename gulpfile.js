@@ -6,6 +6,11 @@ var less = require('gulp-less');
 var header = require('gulp-header');
 var tap = require('gulp-tap');
 var nano = require('gulp-cssnano');
+/**
+ * PostCSS is a tool for transforming CSS with JS plugins. 
+ * These plugins can support variables and mixins, transpile future CSS syntax, inline images, 
+ * and more
+ */
 var postcss = require('gulp-postcss');
 var autoprefixer = require('autoprefixer');
 var rename = require('gulp-rename');
