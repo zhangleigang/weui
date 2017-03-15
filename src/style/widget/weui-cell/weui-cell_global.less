@@ -59,6 +59,13 @@
 }
 .weui-cell__bd{
     flex: 1;
+    @media only screen and (max-width: 375px) {
+        width: 200px;
+        & pre{
+          overflow: hidden;
+          text-overflow : ellipsis;
+        }
+    }
 }
 .weui-cell__ft {
     text-align: right;
