@@ -1,10 +1,11 @@
 <div class="page">
     <div class="page__hd">
         <h1 class="page__title">
-            wa
+            wa统计框架
         </h1>
         <p class="page__desc">wa为wq-analytics的简称。支持异步调用和模块化，解决iOS的点击延迟问题，gulp工程开发，eslint代码质量和风格检查，支持单元测试。options统一为业务测扩展参数，非必填。</p>
     </div>
+
     <div class="page__bd page__bd_spacing">
         <ul>
             <li>
@@ -30,6 +31,7 @@
                     </div>
                 </div>
             </li>
+
             <li>
                 <div class="weui-flex js_category">
                     <p class="weui-flex__item">腾讯pv和点击</p>
@@ -37,13 +39,13 @@
                 </div>
                 <div class="page__category js_categoryInner">
                     <div class="weui-cells page__category-content">
-                        <a class="weui-cell weui-cell_access js_item" href="javascript:;">
+                        <a class="weui-cell weui-cell_access js_item" data-id="tencent_pv" href="javascript:;">
                             <div class="weui-cell__bd">
                                 <p><pre><code class="language-javascript">wa('tencentPv',options)</code></pre></p>
                             </div>
                             <div class="weui-cell__ft"></div>
                         </a>
-                        <a class="weui-cell weui-cell_access js_item" href="javascript:;">
+                        <a class="weui-cell weui-cell_access js_item" data-id="tencent_click" href="javascript:;">
                             <div class="weui-cell__bd">
                                 <p><pre><code class="language-javascript">wa('tencentClick',options)</code></pre></p>
                             </div>
@@ -52,6 +54,7 @@
                     </div>
                 </div>
             </li>
+
             <li>
                 <div class="weui-flex js_category">
                     <p class="weui-flex__item">搜索和店铺搜索</p>
@@ -59,13 +62,13 @@
                 </div>
                 <div class="page__category js_categoryInner">
                     <div class="weui-cells page__category-content">
-                        <a class="weui-cell weui-cell_access js_item"  href="javascript:;">
+                        <a class="weui-cell weui-cell_access js_item"  data-id="search_goods" href="javascript:;">
                             <div class="weui-cell__bd">
                                 <p><pre><code class="language-javascript">wa('goodsSearch',options)</code></pre></p>
                             </div>
                             <div class="weui-cell__ft"></div>
                         </a>
-                        <a class="weui-cell weui-cell_access js_item"  href="javascript:;">
+                        <a class="weui-cell weui-cell_access js_item"  data-id="search_shop" href="javascript:;">
                             <div class="weui-cell__bd">
                                 <p><pre><code class="language-javascript">wa('shopSearch',options)</code></pre></p>
                             </div>
@@ -81,7 +84,7 @@
                 </div>
                 <div class="page__category js_categoryInner">
                     <div class="weui-cells page__category-content">
-                        <a class="weui-cell weui-cell_access js_item"  href="javascript:;">
+                        <a class="weui-cell weui-cell_access js_item"  data-id="guessyoulike" href="javascript:;">
                             <div class="weui-cell__bd">
                                 <p><pre><code class="language-javascript">wa('guessyouLike',options)</code></pre></p>
                             </div>
@@ -97,7 +100,7 @@
                 </div>
                 <div class="page__category js_categoryInner">
                     <div class="weui-cells page__category-content">
-                        <a class="weui-cell weui-cell_access js_item"  href="javascript:;">
+                        <a class="weui-cell weui-cell_access js_item"  data-id="bi" href="javascript:;">
                             <div class="weui-cell__bd">
                                 <p><pre><code class="language-javascript">wa('biRank',options)</code></pre></p>
                             </div>
@@ -113,7 +116,7 @@
                 </div>
                 <div class="page__category js_categoryInner">
                     <div class="weui-cells page__category-content">
-                        <a class="weui-cell weui-cell_access js_item"  href="javascript:;">
+                        <a class="weui-cell weui-cell_access js_item"  data-id="ptagexposure" href="javascript:;">
                             <div class="weui-cell__bd">
                                 <p><pre><code class="language-javascript">wa('ptagExposure',options)</code></pre></p>
                             </div>
@@ -129,7 +132,7 @@
                 </div>
                 <div class="page__category js_categoryInner">
                     <div class="weui-cells page__category-content">
-                        <a class="weui-cell weui-cell_access js_item"  href="javascript:;">
+                        <a class="weui-cell weui-cell_access js_item"  data-id="event" href="javascript:;">
                             <div class="weui-cell__bd">
                                 <p><pre><code class="language-javascript">wa('eventClick',options)</code></pre></p>
                             </div>
@@ -145,13 +148,13 @@
                 </div>
                 <div class="page__category js_categoryInner">
                     <div class="weui-cells page__category-content">
-                        <a class="weui-cell weui-cell_access js_item"  href="javascript:;">
+                        <a class="weui-cell weui-cell_access js_item"  data-id="deviceid_login" href="javascript:;">
                             <div class="weui-cell__bd">
                                 <p><pre><code class="language-javascript">wa('shDeviceId',{type:0})</code></pre></p>
                             </div>
                             <div class="weui-cell__ft"></div>
                         </a>
-                        <a class="weui-cell weui-cell_access js_item"  href="javascript:;">
+                        <a class="weui-cell weui-cell_access js_item"  data-id="deviceid_coupon" href="javascript:;">
                             <div class="weui-cell__bd">
                                 <p><pre><code class="language-javascript">wa('shDeviceId',
 {

@@ -1,0 +1,38 @@
+<div class="page">
+    <div class="page__hd">
+        <h1 class="page__title">北京推荐位和点击上报</h1>
+        <p class="page__desc">使用场景：页面的猜你喜欢楼层</p>
+        <p class="page__desc">跳转点击：由于用户跳转点击时，根据网络情况会有一定的丢失。所以采取了先缓存然后在下一页面上报的方式。</p>
+        <p class="page__desc">页面跨域存储：现在只有wqs.jd.com和wq.jd.com两个域名的代理页面。所以猜你喜欢的楼层页面url需要在这两个域名，跳转到商详会把缓存点击数据进行上报。</p>
+    </div>
+    
+    <div class="page__bd">
+        <div class="weui-panel weui-panel_access">
+            <div class="weui-panel__hd">曝光正确调用方式：</div>
+            <div class="weui-panel__bd">
+                <div class="weui-media-box weui-media-box_text">
+                    <p class="weui-media-box__desc"><pre><code class="language-javascript">wa('guessyouLike',{
+    action: 0, // 代表曝光
+    扩展1: '111',
+    扩展2：'222',
+    ......
+});</code></pre></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="weui-panel weui-panel_access">
+            <div class="weui-panel__hd">点击上报正确调用方式：</div>
+            <div class="weui-panel__bd">
+                <div class="weui-media-box weui-media-box_text">
+                    <p class="weui-media-box__desc"><pre><code class="language-javascript">wa('guessyouLike',{
+    action: 1, // 代表点击
+    扩展1: '111',
+    扩展2：'222',
+    ......
+});</code></pre></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

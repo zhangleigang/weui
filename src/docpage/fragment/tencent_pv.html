@@ -1,0 +1,23 @@
+<div class="page">
+    <div class="page__hd">
+        <h1 class="page__title">腾讯pv上报</h1>
+        <p class="page__desc">同北京pv上报逻辑。</p>
+        <p class="page__desc">公共尾部会默认调用一次，对于业务自己上报的请头部配置<span style="color: red;">wa.TENCENT = true</span>先关闭默认上报,然后调用下面方法上报。</p>
+    </div>
+    
+    <div class="page__bd">
+        <div class="weui-panel weui-panel_access">
+            <div class="weui-panel__hd">正确调用方式：</div>
+            <div class="weui-panel__bd">
+                <div class="weui-media-box weui-media-box_text">
+                    <p class="weui-media-box__desc"><pre><code class="language-javascript">wa('tencentPv',{
+    sku: '',
+    扩展1: '111',
+    扩展2：'222',
+    ......
+});</code></pre></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

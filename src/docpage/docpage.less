@@ -62,21 +62,6 @@ body, .page {
     padding: 0 15px;
 }
 
-.page__ft{
-    padding-top: 40px;
-    padding-bottom: 10px;
-    text-align: center;
-    img{
-        height: 19px;
-    }
-    &.j_bottom{
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        right: 0;
-    }
-}
-
 .page__title {
     text-align: left;
     font-size: 20px;
@@ -174,48 +159,10 @@ body, .page {
     }
 }
 
-.page.button {
-    .page__bd {
-        padding: 0 15px;
-    }
-    .button-sp-area {
-        margin: 0 auto;
-        padding: 15px 0;
-        width: 60%;
-    }
-}
-
 .page.cell {
     .page__bd {
         padding-bottom: 30px;
     }
-}
-
-.page.form {
-    .page__bd {
-        padding-bottom: 30px;
-    }
-}
-
-.page.actionsheet{
-    background-color: #FFFFFF;
-}
-
-.page.dialog {
-    background-color: #FFFFFF;
-    .page__bd {
-        padding: 0 15px;
-    }
-}
-
-.page.msg,
-.page.msg_success,
-.page.msg_warn {
-    background-color: #FFFFFF;
-}
-
-.page.toast{
-    background-color: #FFFFFF;
 }
 
 .page.panel {
@@ -273,154 +220,6 @@ body, .page {
         color: #CFCFCF;
     }
 }
-
-.page.loadmore{
-    background-color: #FFFFFF;
-}
-
-.page.layers{
-    @layerBaseTransform: translateX(15px) rotateX(45deg) rotateZ(10deg) skew(-15deg);
-    @layerStartPos: 120px;
-    @layerSpacing: 80px;
-    @layerSmallStartPos: 140px;
-    @layerSmallSpacing: 60px;
-
-    overflow-x: hidden;
-    perspective: 1000px;
-    .page__hd{
-        @media only screen and (max-width: 320px) {
-            padding-left: 20px;
-            padding-right: 20px;
-        }
-    }
-    .page__bd{
-        position: relative;
-    }
-    .page__desc{
-        min-height: 1.6 * 3em;
-    }
-    .layers__layer{
-        position: absolute;
-        left: 50%;
-        width: 150px;
-        height: 266px;
-        margin-left: -75px;
-        box-sizing: border-box;
-        transition: .5s;
-        background: url(images/layers/transparent.gif) no-repeat center center;
-        background-size: contain;
-        font-size: 14px;
-        color: #FFFFFF;
-        span{
-            position: absolute;
-            bottom: 5px;
-            left: 0;
-            right: 0;
-            text-align: center;
-            transition: .5s;
-        }
-        &:last-child{
-            span{
-                color: #AAAAAA;
-            }
-        }
-        &.j_hide{
-            opacity: 0;
-        }
-        &.j_pic{
-            span{
-                color: transparent;
-            }
-        }
-        @media only screen and (min-width: 375px) and (min-height: 603px) {
-            width: 180px;
-            height: 320px;
-            margin-left: -90px;
-        }
-        @media only screen and (min-width: 414px) and (min-height: 640px) {
-            width: 200px;
-            height: 355px;
-            margin-left: -100px;
-        }
-    }
-    .layers__layer_popout{
-        border: 1px solid rgba(203, 203, 203, .5);
-        z-index: 4;
-        &.j_transform{
-            transform: @layerBaseTransform translateZ(@layerStartPos);
-            @media only screen and (max-width: 320px) {
-                transform: @layerBaseTransform translateZ(@layerSmallStartPos);
-            }
-        }
-        &.j_pic{
-            border-color: transparent;
-            background-image: url(images/layers/popout.png);
-        }
-    }
-    .layers__layer_mask {
-        background-color: rgba(0, 0, 0, 0.5);
-        z-index: 3;
-        &.j_transform{
-            transform: @layerBaseTransform translateZ(@layerStartPos - @layerSpacing);
-            @media only screen and (max-width: 320px) {
-                transform: @layerBaseTransform translateZ(@layerSmallStartPos - @layerSmallSpacing);
-            }
-        }
-    }
-    .layers__layer_navigation {
-        background-color: rgba(40, 187, 102, 0.5);
-        z-index: 2;
-        &.j_transform{
-            transform: @layerBaseTransform translateZ(@layerStartPos - 2 * @layerSpacing);
-            @media only screen and (max-width: 320px) {
-                transform: @layerBaseTransform translateZ(@layerSmallStartPos - 2 * @layerSmallSpacing);
-            }
-        }
-        &.j_pic{
-            background-color: transparent;
-            background-image: url(images/layers/navigation.png);
-        }
-    }
-    .layers__layer_content{
-        background-color: #FFFFFF;
-        z-index: 1;
-        &.j_transform{
-            transform: @layerBaseTransform translateZ(@layerStartPos - 3 * @layerSpacing);
-            @media only screen and (max-width: 320px) {
-                transform: @layerBaseTransform translateZ(@layerSmallStartPos - 3 * @layerSmallSpacing);
-            }
-        }
-        &.j_pic{
-            background-image: url(images/layers/content.png);
-        }
-    }
-}
-
-.page.searchbar{
-    .searchbar-result {
-        display: none;
-        margin-top: 0;
-        font-size: 14px;
-        .weui-cell__bd{
-            padding:2px 0 2px 20px;
-            color:#666;
-        }
-    }
-}
-
-.page.actionsheet{
-    overflow: hidden;
-}
-
-.page.picker{
-    background-color: #FFFFFF;
-    overflow: hidden;
-}
-
-.page.gallery{
-    overflow: hidden;
-}
-
 
 /* animation */
 
