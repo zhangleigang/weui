@@ -12,6 +12,17 @@
 
 <body ontouchstart>
     <div class="container" id="container"></div>
+    <div class="weui-tabbar">
+        <a href="javascript:;" class="weui-tabbar__item weui-bar__item_on js_item" data-id="home">
+            <span class="weui-tabbar__icon icon_API_HL"></span>
+            <p class="weui-tabbar__label">API方法</p>
+        </a>
+
+        <a href="javascript:;" class="weui-tabbar__item js_item" data-id='dochome'>
+            <span class="weui-tabbar__icon icon_component"></span>
+            <p class="weui-tabbar__label">文档说明</p>
+        </a>
+    </div>
     <link rel="import" href="./fragment/home.html">
     <link rel="import" href="./fragment/pv.html">
     <link rel="import" href="./fragment/click.html">
@@ -25,6 +36,8 @@
     <link rel="import" href="./fragment/event.html">
     <link rel="import" href="./fragment/deviceid_login.html">
     <link rel="import" href="./fragment/deviceid_coupon.html">
+
+    <link rel="import" href="./fragment/dochome.html">
 
     <script src="./zepto.min.js"></script>
     <script src="./prism.js"></script>

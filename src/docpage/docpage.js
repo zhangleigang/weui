@@ -24,6 +24,7 @@ $(function() {
             $(window).on('hashchange', function() {
                 var state = history.state || {};
                 var url = location.hash.indexOf('#') === 0 ? location.hash : '#';
+                adjustTabbar(url.replace('#',''));
                 var page = self._find('url', url) || self._defaultPage;
                 if (state._pageIndex <= self._pageIndex || self._findInStack(url)) {
                     self._back(page);
@@ -178,5 +179,74 @@ $(function() {
             location.hash = '';
         };
     }
+
+    function adjustTabbar(id) {
+        var $item = $('.weui-tabbar a');
+
+        if (id == 'dochome') {
+            $($item[0]).removeClass('weui-bar__item_on');
+            $($item[0]).find('span').removeClass('icon_API_HL').addClass('icon_API');
+            $($item[1]).addClass('weui-bar__item_on');
+            $($item[1]).find('span').removeClass('icon_component').addClass('icon_component_HL');
+        } else if (id == 'home' || !id) {
+            $($item[0]).addClass('weui-bar__item_on');
+            $($item[0]).find('span').addClass('icon_API_HL').removeClass('icon_API');
+            $($item[1]).removeClass('weui-bar__item_on');
+            $($item[1]).find('span').addClass('icon_component').removeClass('icon_component_HL');
+        }
+
+        if (['dochome', 'home', ''].indexOf(id) > -1) {
+            $('.weui-tabbar').show();
+        } else {
+            $('.weui-tabbar').hide();
+        }
+    }
+
     init();
+});
+
+$(function() {
+    var winH = $(window).height();
+    var categorySpace = 10;
+    // 高亮代码行
+    Prism.highlightAll();
+
+    $('body').on('click', '.js_item', function() {
+
+        var id = $(this).data('id');
+        window.pageManager.go(id);
+    });
+
+    $('body').on('click', '.js_category', function() {
+        var $this = $(this),
+            $inner = $this.next('.js_categoryInner'),
+            $page = $this.parents('.page'),
+            $parent = $(this).parent('li');
+        var innerH = $inner.data('height');
+        bear = $page;
+
+        if (!innerH) {
+            $inner.css('height', 'auto');
+            innerH = $inner.height();
+            $inner.removeAttr('style');
+            $inner.data('height', innerH);
+        }
+
+        if ($parent.hasClass('js_show')) {
+            $parent.removeClass('js_show');
+        } else {
+            $parent.siblings().removeClass('js_show');
+
+            $parent.addClass('js_show');
+            if (this.offsetTop + this.offsetHeight + innerH > $page.scrollTop() + winH) {
+                var scrollTop = this.offsetTop + this.offsetHeight + innerH - winH + categorySpace;
+
+                if (scrollTop > this.offsetTop) {
+                    scrollTop = this.offsetTop - categorySpace;
+                }
+
+                $page.scrollTop(scrollTop);
+            }
+        }
+    });
 });
