@@ -24,7 +24,6 @@ $(function() {
             $(window).on('hashchange', function() {
                 var state = history.state || {};
                 var url = location.hash.indexOf('#') === 0 ? location.hash : '#';
-                adjustTabbar(url.replace('#',''));
                 var page = self._find('url', url) || self._defaultPage;
                 if (state._pageIndex <= self._pageIndex || self._findInStack(url)) {
                     self._back(page);
@@ -66,6 +65,7 @@ $(function() {
             var $html = $(html).addClass('slideIn').addClass(config.name);
             $html.on('animationend webkitAnimationEnd', function() {
                 $html.removeClass('slideIn').addClass('js_show');
+                adjustTabbar(location.hash.replace('#',''));
             });
             this.$container.append($html);
             this._pageAppend.call(this, $html);
@@ -112,6 +112,7 @@ $(function() {
 
             stack.dom.addClass('slideOut').on('animationend webkitAnimationEnd', function() {
                 stack.dom.remove();
+                adjustTabbar(location.hash.replace('#',''));
             });
 
             return this;
@@ -198,7 +199,7 @@ $(function() {
         if (['dochome', 'home', ''].indexOf(id) > -1) {
             $('.weui-tabbar').show();
         } else {
-            $('.weui-tabbar').hide();
+            $('.weui-tabbar').hide('fast');
         }
     }
 
