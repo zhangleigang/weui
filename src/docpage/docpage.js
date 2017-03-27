@@ -199,7 +199,7 @@ $(function() {
         if (['dochome', 'home', ''].indexOf(id) > -1) {
             $('.weui-tabbar').show();
         } else {
-            $('.weui-tabbar').hide('fast');
+            $('.weui-tabbar').fadeOut();
         }
     }
 
