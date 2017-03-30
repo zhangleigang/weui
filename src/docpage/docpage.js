@@ -182,7 +182,7 @@ $(function() {
     }
 
     function adjustTabbar(id) {
-        var $item = $('.weui-tabbar a');
+        var $item = $('.weui-tabbar a'); 
 
         if (id == 'dochome') {
             $($item[0]).removeClass('weui-bar__item_on');
