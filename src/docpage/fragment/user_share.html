@@ -1,0 +1,24 @@
+<div class="page">
+    <div class="page__hd">
+        <h1 class="page__title">用户分享成功</h1>
+        <p class="page__desc">使用场景：在分享成功的回调函数里面调用</p>
+        <p class="page__desc">抓包类型：wg_wx.000007</p>
+    </div>
+
+    <div class="page__bd">
+        <div class="weui-panel weui-panel_access">
+            <div class="weui-panel__hd">正确调用方式：</div>
+            <div class="weui-panel__bd">
+                <div class="weui-media-box weui-media-box_text">
+                    <p class="weui-media-box__desc"><pre><code class="language-javascript">wa('userShare',{
+    share_type: 1, // 1代表商详，2代表活动
+    sku_id: 666,
+    扩展1：'',
+    扩展2：''
+});</code></pre></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page__ft"></div>
+</div>

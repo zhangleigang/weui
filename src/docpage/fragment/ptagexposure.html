@@ -1,8 +1,9 @@
 <div class="page">
     <div class="page__hd">
         <h1 class="page__title">ptag曝光</h1>
-        <p class="page__desc">典型使用场景：用户下载京东APP时上报，类似需求的可采用该通道。</p>
+        <p class="page__desc">使用场景：统计ptag被用户看到的次数。</p>
         <p class="page__desc">抓包类型：wg_wx.000003</p>
+        <p class="page__desc"><span style="color: red;">备注：多个ptag，使用连接符'_'</span></p>
     </div>
 
     <div class="page__bd">
@@ -10,9 +11,26 @@
             <div class="weui-panel__hd">正确调用方式：</div>
             <div class="weui-panel__bd">
                 <div class="weui-media-box weui-media-box_text">
-                    <p class="weui-media-box__desc"><pre><code class="language-javascript">wa('ptagexposure',{
-    ptag: '39696.3.3'
+                    <p class="weui-media-box__desc"><pre><code class="language-javascript">wa('ptagExposure',{
+    ptag: '39696.3.3',
+    // 多个ptag，使用连接符'_'
+    ptag: [ptag1,ptag2,ptag3].join('_'),
+    扩展1: '111',
+    扩展2：'222',
+    ......
 });</code></pre></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="weui-panel weui-panel_access">
+            <div class="weui-panel__hd">需要升级替换接口1：</div>
+            <div class="weui-panel__bd">
+                <div class="weui-media-box weui-media-box_text">
+                    <del>
+                        <p class="weui-media-box__desc"><pre><code class="language-javascript">var report = require('report');
+report.logGoodsExposure(ptag);</code></pre></p>
+                    </del>
                 </div>
             </div>
         </div>
